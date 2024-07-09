@@ -1,0 +1,8 @@
+{
+  "name": "wedding_invite",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "hanami-assets": "^2.1.1"
+  }
+}
