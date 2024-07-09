@@ -1,0 +1,13 @@
+<body id='main-content'>
+  <h1>Invites</h1>
+  <% javascript_tag("app") %>
+
+  <div class ='invite-list'>
+    <% invites.each do |invite| %>
+      <div>
+        <a href="/invite/<%= invite[:id]%>"><%= invite[:name] %></a>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require "hanami"
-
+require 'hanami'
 module WeddingInvite
   class App < Hanami::App
   end
