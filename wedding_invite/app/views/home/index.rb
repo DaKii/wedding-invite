@@ -3,13 +3,11 @@
 module WeddingInvite
   module Views
     module Home
+      # View for Index
       class Index < WeddingInvite::View
-        expose :invites do
-          [
-            { id: 1, name: 'Invite 1' },
-            { id: 2, name: 'Invite 2' }
-          ]
-        end
+        include Deps['persistence.rom']
+
+        expose :attendees
       end
     end
   end
