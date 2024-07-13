@@ -3,9 +3,19 @@
   <% javascript_tag("app") %>
 
   <div class ='invite-list'>
-    <% invites.each do |invite| %>
-      <div>
-        <a href="/invite/<%= invite[:id]%>"><%= invite[:name] %></a>
+    <a href="/invite/new">Create new invite</a>
+    <% attendees.each do |attendee| %>
+      <div id="invite-<%= attendee[:id] %>" class='invite-item'>
+        <a href="/invite/<%= attendee[:id]%>"><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
+        <div class='rsvp'>
+          <% if attendee[:rsvp].nil? %>
+            Did not answer
+          <% elsif attendee[:rsvp] %>
+            RSVP'ed Yes
+          <% else %>
+            RSVP'ed No
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

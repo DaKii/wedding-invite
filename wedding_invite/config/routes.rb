@@ -4,7 +4,9 @@ module WeddingInvite
   # Routes class
   class Routes < Hanami::Routes
     # Add your routes here. See https://guides.hanamirb.org/routing/overview/ for details.
-    get '/', to: 'home.index'
+    root to: 'home.index'
     get '/invite/:id', to: 'invite.show'
+    get '/invite/new', to: 'invite.new'
+    post '/invite', to: 'invite.create'
   end
 end

@@ -2,7 +2,7 @@
 
 # lib/wedding_invite/persistence/repositories/attendee.rb
 
-module Sandbox
+module WeddingInvite
   module Persistence
     module Repositories
       # Repository for attendees table

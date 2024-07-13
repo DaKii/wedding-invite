@@ -2,7 +2,14 @@ Hanami.app.register_provider :persistence, namespace: true do
   prepare do
     require 'rom'
 
-    config = ROM::Configuration.new(:sql, target['settings'].database_url)
+    opts = {
+      username: 'postgres_admin',
+      password: 'password101!:)',
+      encoding: 'UTF8',
+      search_path: 'wedding_invite'
+    }
+
+    config = ROM::Configuration.new(:sql, target['settings'].database_url, opts)
 
     register 'config', config
     register 'db', config.gateways[:default].connection

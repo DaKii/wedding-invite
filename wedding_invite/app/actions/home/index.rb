@@ -5,11 +5,9 @@ module WeddingInvite
     module Home
       # Index class
       class Index < WeddingInvite::Action
-        include Deps[repo: 'application.persistence.repositories.attendees']
+        include Deps['persistence.rom']
 
-        def handle(_request, response)
-          response.render view, attendees: repo.all
-        end
+        def handle(_request, response); end
       end
     end
   end

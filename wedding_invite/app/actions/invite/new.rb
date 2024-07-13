@@ -3,11 +3,8 @@
 module WeddingInvite
   module Actions
     module Invite
-      class Show < WeddingInvite::Action
+      class New < WeddingInvite::Action
         def handle(request, response)
-          id = request.params[:id]
-
-          response.render(view, id: id)
         end
       end
     end

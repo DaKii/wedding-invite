@@ -1,12 +1,20 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+      hello
     </div>
     <div class="flip-card-back">
-      <h1>John Doe</h1>
-      <p>Architect & Engineer</p>
-      <p>We love that guy</p>
+      <h1><%= attendee_info[:first_name] %> <%= attendee_info[:last_name] %></h1>
+      <form>
+        <label>RSVP</label>
+        <select id="rsvp" name="rsvp-options">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      <div class="flip-card-back-button">
+      </div>
     </div>
   </div>
 </div>

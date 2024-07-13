@@ -7,7 +7,12 @@ module WeddingInvite
       class Index < WeddingInvite::View
         include Deps['persistence.rom']
 
-        expose :attendees
+        expose :attendees do
+          rom.relations[:attendees]
+             .select(:id, :first_name, :last_name)
+             .order(:id)
+             .to_a
+        end
       end
     end
   end
