@@ -5,6 +5,7 @@ module WeddingInvite
     module Invite
       class Show < WeddingInvite::Action
         def handle(request, response)
+          puts 'IN SHOW'
           id = request.params[:id]
 
           response.render(view, id: id)

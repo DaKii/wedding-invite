@@ -1,9 +1,14 @@
 <body id='main-content'>
   <h1>Invites</h1>
   <% javascript_tag("app") %>
-
-  <div class ='invite-list'>
-    <a href="/invite/new">Create new invite</a>
+    <div class ='invite-list'>
+      <div id='create-invite-button' hx-get="/invite/new"
+        hx-trigger="click"
+        hx-target="#create-invite-button"
+        hx-swap="outerHTML"
+      >
+        Create new invite
+      </div>
     <% attendees.each do |attendee| %>
       <div id="invite-<%= attendee[:id] %>" class='invite-item'>
         <a href="/invite/<%= attendee[:id]%>"><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>

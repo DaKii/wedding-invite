@@ -9,6 +9,9 @@ gem 'hanami-router', '~> 2.1'
 gem 'hanami-validations', '~> 2.1'
 gem 'hanami-view', '~> 2.1'
 
+gem 'net-smtp', '~> 0.5.0'
+gem 'rubocop'
+
 gem 'pg'
 gem 'rom', '~> 5.3'
 gem 'rom-sql', '~> 3.6'

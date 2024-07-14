@@ -6,9 +6,11 @@ module WeddingInvite
       class Show < WeddingInvite::View
         include Deps['persistence.rom']
 
+        expose :id
+
         expose :attendee_info do |id:|
           rom.relations[:attendees]
-             .select(:id, :first_name, :last_name)
+             .select(:id, :first_name, :last_name, :rsvp, :plus_count)
              .where(id: id)
              .one
         end

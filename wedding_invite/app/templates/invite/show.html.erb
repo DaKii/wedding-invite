@@ -1,20 +1,31 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      hello
     </div>
     <div class="flip-card-back">
+      
       <h1><%= attendee_info[:first_name] %> <%= attendee_info[:last_name] %></h1>
-      <form>
-        <label>RSVP</label>
-        <select id="rsvp" name="rsvp-options">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <input type="submit" value="Submit">
-      </form>
+      <% if attendee_info[:rsvp] %>
+        You have already RSVP'ed with a plus count of <%= attendee_info[:plus_count] %>
+      <% else %>
+        <%= form_for :attendee, "/invite/#{id}", method: :post do |f| %>
+            <%= f.label 'RSVP', for: :rsvp_options %> 
+            <%= f.select 'rsvp', [['Yes', true], ['No', false]]%>
+            <%= f.label 'Plus One', for: :plus_count %> 
+            <%= f.text_field :plus_count%>
+            <%= f.submit 'Submit' %>
+        <% end %>
+      <% end %>
       <div class="flip-card-back-button">
       </div>
     </div>
   </div>
 </div>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
