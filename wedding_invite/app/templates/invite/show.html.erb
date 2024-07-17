@@ -1,10 +1,12 @@
 <div class="flip-card">
   <div class="flip-card-inner">
-    <div class="flip-card-front">
-    </div>
-    <div class="flip-card-back">
-      
+    <div id="flip-card-front" class='flip-card-side'>
       <h1><%= attendee_info[:first_name] %> <%= attendee_info[:last_name] %></h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris eros, accumsan vel condimentum vitae, tempor non tortor. Mauris vel venenatis lacus. Praesent ac accumsan orci. Phasellus a viverra arcu. Vestibulum ut placerat leo. Suspendisse facilisis rhoncus leo, in laoreet nisl vestibulum quis. Duis tempus luctus risus et gravida. Suspendisse ac augue at felis feugiat auctor. Etiam non commodo lectus.
+
+      Proin fringilla purus sed sagittis auctor. Nulla id eros in nisl consectetur consectetur at eu nisi. Donec consectetur, lacus nec auctor aliquam, nulla augue convallis dolor, vehicula suscipit dolor risus in ex. Nulla gravida non velit a mattis. Praesent et lacus purus. Etiam a consectetur mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </div>
+    <div id="flip-card-back" class='flip-card-side'>
       <% if attendee_info[:rsvp] %>
         You have already RSVP'ed with a plus count of <%= attendee_info[:plus_count] %>
       <% else %>

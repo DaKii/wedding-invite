@@ -4,6 +4,52 @@ body {
   font-family: sans-serif;
 }
 
+#main-content {
+  display: flex;
+  justify-content: center;
+}
+
+#invite-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.invite-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .invite-item {
   display: flex;
+  flex-direction: column;
+}
+
+.flip-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.flip-card-inner {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#flip-card-front {
+  background-color: red;
+}
+
+#flip-card-back {
+  background-color: blue;
+}
+
+.flip-card-side {
+  position: absolute;
 }

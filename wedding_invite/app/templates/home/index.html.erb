@@ -1,28 +1,41 @@
-<body id='main-content'>
-  <h1>Invites</h1>
-  <% javascript_tag("app") %>
-    <div class ='invite-list'>
-      <div id='create-invite-button' hx-get="/invite/new"
-        hx-trigger="click"
-        hx-target="#create-invite-button"
-        hx-swap="outerHTML"
-      >
-        Create new invite
-      </div>
-    <% attendees.each do |attendee| %>
-      <div id="invite-<%= attendee[:id] %>" class='invite-item'>
-        <a href="/invite/<%= attendee[:id]%>"><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
-        <div class='rsvp'>
-          <% if attendee[:rsvp].nil? %>
-            Did not answer
-          <% elsif attendee[:rsvp] %>
-            RSVP'ed Yes
-          <% else %>
-            RSVP'ed No
+<% javascript_tag("app") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
+  <body>
+    <div id='main-content'>
+      <div id='invite-list-container'>
+        <h1>Invites List</h1>
+        <div class ='invite-list'>
+          <div id='create-invite-button' hx-get="/invite/new"
+            hx-trigger="click"
+            hx-target="#create-invite-button"
+            hx-swap="outerHTML"
+          >
+            Create new invite
+          </div>
+          <br>
+          <% attendees.each do |attendee| %>
+            <div id="invite-<%= attendee[:id] %>" class='invite-item'>
+              <a href="/invite/<%= attendee[:id]%>"><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
+              <div class='rsvp'>
+                <% if attendee[:rsvp].nil? %>
+                  Did not answer
+                <% elsif attendee[:rsvp] %>
+                  RSVP'ed Yes
+                <% else %>
+                  RSVP'ed No
+                <% end %>
+              </div>
+            </div>
+            <br>
           <% end %>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
-
+    </div>
+  </body>
+</html>
