@@ -5,35 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--- Font list -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id='main-content'>
       <div id='invite-list-container'>
-        <h1>Invites List</h1>
+        <h1 class='invite-list-name'>Guest List</h1>
         <div class ='invite-list'>
-          <div id='create-invite-button' hx-get="/invite/new"
-            hx-trigger="click"
-            hx-target="#create-invite-button"
-            hx-swap="outerHTML"
-          >
-            Create new invite
+          <div class='create-invite-button'>
+            <div class='create-invite-button-text' hx-get="/invite/new" hx-trigger="click" hx-target=".create-invite-button" hx-swap="outerHTML">
+              Create new invite
+            </div>
           </div>
           <br>
-          <% attendees.each do |attendee| %>
-            <div id="invite-<%= attendee[:id] %>" class='invite-item'>
-              <a href="/invite/<%= attendee[:id]%>"><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
-              <div class='rsvp'>
-                <% if attendee[:rsvp].nil? %>
-                  Did not answer
-                <% elsif attendee[:rsvp] %>
-                  RSVP'ed Yes
-                <% else %>
-                  RSVP'ed No
-                <% end %>
-              </div>
-            </div>
-            <br>
-          <% end %>
+          <table class='invite-list-table'>
+            <thead class='invite-list-header'>
+              <tr>
+                <th>Name</th>
+                <th>RSVP</th>
+                <th>Extra Invites</th>
+              </tr>
+            </thead>
+            <tbody class='invite-list-items'>
+              <% attendees.each do |attendee| %>
+                <tr id="invite-<%= attendee[:id] %>" class='invite-item'>
+                  <td>
+                    <a href="/invite/<%= attendee[:id]%>" class='invite-item-name invite-item-content'><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
+                  </td>      
+                  <td class='rsvp invite-item-content'>
+                    <% if attendee[:rsvp].nil? %>
+                    <% elsif attendee[:rsvp] %>
+                      Yes
+                    <% else %>
+                      No
+                    <% end %>
+                  </td>
+                  <td class='plus-count invite-item-content'>
+                    <%= attendee[:plus_count] %>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class='table-dash'>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
