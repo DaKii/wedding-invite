@@ -3,8 +3,8 @@ Hanami.app.register_provider :persistence, namespace: true do
     require 'rom'
 
     opts = {
-      username: 'postgres_admin',
-      password: 'password101!:)',
+      username: target['settings'].db_username,
+      password: target['settings'].db_password,
       encoding: 'UTF8',
       search_path: 'wedding_invite'
     }
