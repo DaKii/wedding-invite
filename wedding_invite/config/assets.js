@@ -2,7 +2,7 @@ import * as assets from "hanami-assets";
 
 await assets.run();
 
-module.exports = {
+export default {
   compile: false, // Disable asset compilation
   watch: false, // Disable asset watching
   digest: false, // Disable asset digesting
