@@ -100,6 +100,27 @@ table {
   transform: rotateY(-180deg);
 }
 
+.flip-card-desc {
+  background-color: #f3e4d0;
+  border: red solid 1px;
+  height: 100px;
+  width: 120px;
+}
+
+.flip-card-desc input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border-bottom: 0.15em solid currentColor;
+}
+
+.rsvp-option {
+  display: flex;
+  flex-direction: column;
+}
 
 @media (max-width: 1300px) {
   .invite-list-new-form {
