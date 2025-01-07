@@ -1,5 +1,6 @@
 services:
   app:
+    image: wedding-invite-app
     build: .
     ports:
       - 3000:3000
