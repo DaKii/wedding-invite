@@ -5,10 +5,9 @@ RUN bundle install
 
 FROM ruby:3.3-alpine as runner
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
 WORKDIR /usr/src/app
+
+COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 
 COPY src/ .
 COPY .env ./.env
