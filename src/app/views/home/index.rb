@@ -5,7 +5,10 @@ module WeddingInvite
     module Home
       # View for Index
       class Index < WeddingInvite::View
+        puts 'BEFORE DEPS'
         include Deps['persistence.rom']
+
+        puts 'IN INDEX'
 
         expose :attendees do
           rom.relations[:attendees]
@@ -13,6 +16,8 @@ module WeddingInvite
              .order(:id)
              .to_a
         end
+
+        puts 'GOT ATTENDEES'
       end
     end
   end
