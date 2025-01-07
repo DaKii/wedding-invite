@@ -7,3 +7,8 @@ services:
     environment:
       - HANAMI_PORT=3000
       - HANAMI_ENV=production
+
+
+networks:
+  postgres_default:
+    external: true
