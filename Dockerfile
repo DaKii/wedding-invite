@@ -1,9 +1,11 @@
 FROM ruby:3.3 as builder
-RUN apt-get update
+RUN apt update
 COPY src/Gemfile* ./
 RUN bundle install
 
 FROM ruby:3.3 as runner
+
+RUN apt update && apt install postgresql
 
 WORKDIR /usr/src/app
 
