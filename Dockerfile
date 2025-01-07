@@ -1,6 +1,6 @@
 FROM ruby:3.3-alpine as builder
 RUN apk add build-base
-COPY Gemfile* ./
+COPY src/Gemfile* ./
 RUN bundle install
 
 FROM ruby:3.3-alpine as runner
