@@ -11,4 +11,5 @@ services:
 
 networks:
   postgres_default:
+    name: postgres_default
     external: true
