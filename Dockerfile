@@ -1,5 +1,5 @@
 FROM ruby:3.3 as builder
-RUN apk add build-base
+RUN apt-get update
 COPY src/Gemfile* ./
 RUN bundle install
 
