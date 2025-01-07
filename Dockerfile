@@ -12,4 +12,6 @@ RUN bundle install
 
 COPY . .
 
+RUN hanami assets compile
+
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
