@@ -17,6 +17,11 @@ module WeddingInvite
              .to_a
         end
 
+        puts rom.relations[:attendees]
+                .select(:id, :first_name, :last_name, :rsvp, :plus_count)
+                .order(:id)
+                .to_a
+
         puts 'GOT ATTENDEES'
       end
     end
