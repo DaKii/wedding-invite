@@ -1,9 +1,9 @@
-FROM ruby:3.3-alpine as builder
+FROM ruby:3.3 as builder
 RUN apk add build-base
 COPY src/Gemfile* ./
 RUN bundle install
 
-FROM ruby:3.3-alpine as runner
+FROM ruby:3.3 as runner
 
 WORKDIR /usr/src/app
 
