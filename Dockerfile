@@ -18,5 +18,5 @@ COPY .env.test ./.env.test
 RUN npm install
 RUN bundle exec hanami assets compile
 
-CMD ["hanami" "dev" "run"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
