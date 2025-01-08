@@ -1,14 +1,6 @@
 import * as assets from "hanami-assets";
 
 await assets.run();
-
-export default {
-  compile: false, // Disable asset compilation
-  watch: false, // Disable asset watching
-  digest: false, // Disable asset digesting
-  compress: false, // Disable asset compression
-};
-
 // To provide additional esbuild (https://esbuild.github.io) options, use the following:
 //
 // Read more at: https://guides.hanamirb.org/assets/customization/
