@@ -2,12 +2,12 @@
 
 source 'https://rubygems.org'
 
-gem 'hanami', '~> 2.1'
-gem 'hanami-assets', '~> 2.1'
-gem 'hanami-controller', '~> 2.1'
-gem 'hanami-router', '~> 2.1'
-gem 'hanami-validations', '~> 2.1'
-gem 'hanami-view', '~> 2.1'
+gem 'hanami', '~> 2.2'
+gem 'hanami-assets', '~> 2.2'
+gem 'hanami-controller', '~> 2.2'
+gem 'hanami-router', '~> 2.2'
+gem 'hanami-validations', '~> 2.2'
+gem 'hanami-view', '~> 2.2'
 
 gem 'net-smtp', '~> 0.5.0'
 gem 'rubocop'
@@ -22,7 +22,7 @@ gem 'rake'
 
 group :development do
   gem 'guard-puma'
-  gem 'hanami-webconsole', '~> 2.1'
+  gem 'hanami-webconsole', '~> 2.2'
 end
 
 group :development, :test do
@@ -30,11 +30,11 @@ group :development, :test do
 end
 
 group :cli, :development do
-  gem 'hanami-reloader', '~> 2.1'
+  gem 'hanami-reloader', '~> 2.2'
 end
 
 group :cli, :development, :test do
-  gem 'hanami-rspec', '~> 2.1'
+  gem 'hanami-rspec', '~> 2.2'
 end
 
 group :test do
