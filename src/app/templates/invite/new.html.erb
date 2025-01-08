@@ -1,11 +1,8 @@
 <div class='invite-list-new'>
   <h3>New Invite</h3>
-
   <%= form_for :attendee, '/invite', class: 'invite-list-new-form' do |f| %>
-    <%= f.label "First Name", for: :first_name %>
-    <%= f.text_field :first_name %>
-    <%= f.label "Last Name", for: :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.label "Name", for: :name %>
+    <%= f.text_field :name %>
     <%= f.label "Extra invites", for: :plus_count %>
     <%= f.select :plus_count , [1,2,3] %>
     <p>

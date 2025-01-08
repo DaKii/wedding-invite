@@ -20,6 +20,23 @@ body {
   justify-content: center;
 }
 
+table, th, td, tr {
+  border: 1px solid #f3e4d0;
+  border-collapse: collapse;
+}
+
+thead.invite-list-header th {
+  padding: 1em;
+  padding-left: 6em;
+  padding-right: 6em;
+}
+
+tbody.invite-list-items td {
+ background-color: #f3e4d0;
+ border: 1px solid #153e54;
+ color: #153e54;
+}
+
 #invite-list-container {
   display: flex;
   flex-direction: column;
@@ -29,8 +46,9 @@ body {
 
 .invite-list-name {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
+  color: #f3e4d0;
 }
 
 .invite-list {
@@ -39,7 +57,19 @@ body {
   justify-content: center;
   background-color: #f3e4d0;
   padding: 1em;
-  box-shadow: 3px 5px 8px #888888;
+}
+
+.invite-list th {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #f3e4d0;
+  background-color: #153e54;
+}
+
+.invite-list td {
+  color: #f3e4d0;
+  background-color: #153e54;
 }
 
 .create-invite-button {
@@ -49,7 +79,7 @@ body {
 
 .create-invite-button-text {
   width: 10em;
-  background-color: #c2f7e3;
+  background-color: #f3e4d0;
   padding: 0.25em;
   box-shadow: 3px 5px 8px #888888;
 }

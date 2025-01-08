@@ -4,36 +4,32 @@
       <%= image_tag("postcard-front.png", alt: "postcard-front", class: "postcard-image") %>
     </div>
     <div id="flip-card-back" class='flip-card-side'>
+      <div class='flip-card-desc'>
+        <% if attendee_info[:rsvp] %>
+          You have already RSVP'ed with a plus count of <%= attendee_info[:plus_count] %>
+        <% else %>
+          <%= form_for :attendee, "/invite/#{id}", method: :post do |f| %>
+            <div class='rsvp-option'>
+              <%= f.label 'Yes', for: 'rsvp-yes' %>
+              <%= f.radio_button :rsvp_options, true, id: 'attendee-rsvp-yes' %>
+            </div>
+            <div class='rsvp-option'>
+              <%= f.label 'No', for: 'rsvp-no' %>
+              <%= f.radio_button :rsvp_options, false, id: 'attendee-rsvp-no'%>
+            </div>
+            <%= f.label 'Plus One', for: :plus_count %>
+            <%= f.text_field :plus_count%>
+            <%= f.submit 'Submit' %>
+          <% end %>
+        <% end %>
+      </div>
       <%= image_tag("postcard-back.png", alt: "postcard-back", class: "postcard-image") %>
     </div>
   </div>
-
-  <div class='flip-card-desc'>
-    <% if attendee_info[:rsvp] %>
-      You have already RSVP'ed with a plus count of <%= attendee_info[:plus_count] %>
-    <% else %>
-      <%= form_for :attendee, "/invite/#{id}", method: :post do |f| %>
-        <div class='rsvp-option'>
-          <%= f.label 'Yes', for: 'rsvp-yes' %> 
-          <%= f.radio_button :rsvp_options, true, id: 'attendee-rsvp-yes' %>
-        </div>
-        <div class='rsvp-option'>
-          <%= f.label 'No', for: 'rsvp-no' %> 
-          <%= f.radio_button :rsvp_options, false, id: 'attendee-rsvp-no'%>
-        </div>
-        <%= f.label 'Plus One', for: :plus_count %> 
-        <%= f.text_field :plus_count%>
-        <%= f.submit 'Submit' %>
-      <% end %>
-    <% end %>
-  </div>
 </div>
-
 <% if flash[:alert] %>
   <p><%= flash[:alert] %></p>
 <% end %>
-
 <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
 <% end %>
-

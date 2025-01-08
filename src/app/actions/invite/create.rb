@@ -8,8 +8,7 @@ module WeddingInvite
 
         params do
           required(:attendee).hash do
-            required(:first_name).filled(:string)
-            required(:last_name).filled(:string)
+            required(:name).filled(:string)
             optional(:plus_count).filled(:integer)
           end
         end

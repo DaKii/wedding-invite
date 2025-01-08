@@ -10,7 +10,7 @@ module WeddingInvite
 
         expose :attendee_info do |id:|
           rom.relations[:attendees]
-             .select(:id, :first_name, :last_name, :rsvp, :plus_count)
+             .select(:id, :name, :rsvp, :plus_count)
              .where(id: id)
              .one
         end

@@ -3,9 +3,9 @@ RSpec.feature 'Home' do
   let(:attendees) { Hanami.app['persistence.rom'].relations[:attendees] }
 
   before do
-    attendees.insert(first_name: 'Mochi', last_name: 'Pochi', rsvp: true)
-    attendees.insert(first_name: 'Tigger', last_name: 'Oni', rsvp: false)
-    attendees.insert(first_name: 'TJ', last_name: 'Winne')
+    attendees.insert(name: 'Mochi', rsvp: true)
+    attendees.insert(name: 'Tigger', rsvp: false)
+    attendees.insert(name: 'TJ')
   end
 
   scenario 'visiting the home page shows a list of invites' do

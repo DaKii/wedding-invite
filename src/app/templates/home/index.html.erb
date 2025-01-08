@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
   </head>
   <body>
     <div id='main-content'>
@@ -21,17 +20,17 @@
           <table class='invite-list-table'>
             <thead class='invite-list-header'>
               <tr>
-                <th>Name</th>
+                <th>NAME</th>
                 <th>RSVP</th>
-                <th>Extra Invites</th>
+                <th>EXTRA INVITES</th>
               </tr>
             </thead>
             <tbody class='invite-list-items'>
               <% attendees.each do |attendee| %>
                 <tr id="invite-<%= attendee[:id] %>" class='invite-item'>
                   <td>
-                    <a href="/invite/<%= attendee[:id]%>" class='invite-item-name invite-item-content'><%= attendee[:first_name] %> <%= attendee[:last_name] %></a>
-                  </td>      
+                    <a href="/invite/<%= attendee[:id]%>" class='invite-item-name invite-item-content'><%= attendee[:name] %> <%= attendee[:last_name] %></a>
+                  </td>
                   <td class='rsvp invite-item-content'>
                     <% if attendee[:rsvp].nil? %>
                     <% elsif attendee[:rsvp] %>
@@ -45,8 +44,6 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="3" class='table-dash'>
-                  </td>
                 </tr>
               <% end %>
             </tbody>

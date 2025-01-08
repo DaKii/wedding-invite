@@ -12,7 +12,7 @@ module WeddingInvite
 
         expose :attendees do
           rom.relations[:attendees]
-             .select(:id, :first_name, :last_name, :rsvp, :plus_count)
+             .select(:id, :name, :rsvp, :plus_count)
              .order(:id)
              .to_a
         rescue StandardError => e
