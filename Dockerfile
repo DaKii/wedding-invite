@@ -5,7 +5,7 @@ RUN bundle install
 
 FROM ruby:3.3 as runner
 
-RUN apt update && apt install postgresql
+RUN apt update && apt install postgresql nodejs -y
 
 WORKDIR /usr/src/app
 
