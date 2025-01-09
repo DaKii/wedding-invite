@@ -110,12 +110,22 @@ a.image-link:focus {
   color: #153e54
 }
 
+.form-labels.white {
+  color: #f3e4d0
+}
+
+
 .form-inputs {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #153e54;
   background-color: #f3e4d0;
+}
+
+.form-inputs.white {
+  color: #f3e4d0;
+  background-color: #153e54;
 }
 
 #attendee-plus-count {
@@ -184,14 +194,11 @@ table {
   transform: rotateY(-180deg);
 }
 
-.flip-card-desc input[type="radio"] {
-  appearance: none;
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border-bottom: 0.15em solid currentColor;
+.flip-card-desc {
+  color: #f3e4d0;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
 }
 
 .rsvp-button {
@@ -201,12 +208,6 @@ table {
   box-shadow: 5px 5px #0A2530;
   color: #153e54;
   background-color: #f3e4d0;
-}
-
-
-.rsvp-option {
-  display: flex;
-  flex-direction: column;
 }
 
 @media (max-width: 1300px) {

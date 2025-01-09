@@ -5,6 +5,7 @@ module WeddingInvite
     module Invite
       class Rsvp < WeddingInvite::View
         expose :id
+        expose :total_plus_count
       end
     end
   end

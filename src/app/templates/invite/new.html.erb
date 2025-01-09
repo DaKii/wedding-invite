@@ -3,7 +3,7 @@
     <%= f.label "NAME", for: :name, class: 'form-labels' %>
     <%= f.text_field :name, class: 'form-inputs' %>
     <%= f.label "EXTRA INVITES", for: :plus_count, class: 'form-labels' %>
-    <%= f.select :plus_count , [1,2,3], class: 'form-inputs'%>
+    <%= f.select :plus_count , [0,1,2,3], class: 'form-inputs'%>
     <p>
       <%= f.submit "CREATE", class: 'btn invite-list-new' %>
     </p>

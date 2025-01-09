@@ -5,10 +5,7 @@ module WeddingInvite
     module Home
       # View for Index
       class Index < WeddingInvite::View
-        puts 'BEFORE DEPS'
         include Deps['persistence.rom']
-
-        puts 'IN INDEX'
 
         expose :attendees do
           rom.relations[:attendees]
@@ -18,8 +15,6 @@ module WeddingInvite
         rescue StandardError => e
           self.body = "Database connection failed: #{e.message}"
         end
-
-        puts 'GOT ATTENDEES'
       end
     end
   end
