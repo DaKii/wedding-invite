@@ -25,7 +25,11 @@ table, th, td, tr {
   border-collapse: collapse;
 }
 
-thead.invite-list-header th {
+th.thead-other {
+  padding: 1em;
+}
+
+th.thead-name {
   padding: 1em;
   padding-left: 6em;
   padding-right: 6em;
@@ -35,6 +39,19 @@ tbody.invite-list-items td {
  background-color: #f3e4d0;
  border: 1px solid #153e54;
  color: #153e54;
+}
+
+td.invite-item-name.invite-item-content {
+  text-align: left;
+  padding: 0.5em;
+}
+
+a {
+  text-decoration:none;
+}
+
+a.image-link:focus {
+  outline: none;
 }
 
 #invite-list-container {
@@ -75,13 +92,45 @@ tbody.invite-list-items td {
 .create-invite-button {
   display: flex;
   justify-content: center;
+  padding: 1em;
 }
 
 .create-invite-button-text {
-  width: 10em;
+  width: 50%;
+  padding: 1em;
+  box-shadow: 5px 5px #0A2530;
+  color: #f3e4d0;
+  background-color: #153e54;
+}
+
+.form-labels {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #153e54
+}
+
+.form-inputs {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #153e54;
   background-color: #f3e4d0;
-  padding: 0.25em;
-  box-shadow: 3px 5px 8px #888888;
+}
+
+#attendee-plus-count {
+  color: #f3e4d0;
+  background-color: #153e54;
+}
+
+.btn.invite-list-new {
+  width: 25%;
+  padding: 0.75em;
+  box-shadow: 5px 5px #0A2530;
+  color: #f3e4d0;
+  background-color: #153e54;
+  border: none;
+  text-decoration: none;
 }
 
 table {
@@ -135,13 +184,6 @@ table {
   transform: rotateY(-180deg);
 }
 
-.flip-card-desc {
-  background-color: #f3e4d0;
-  border: red solid 1px;
-  height: 100px;
-  width: 120px;
-}
-
 .flip-card-desc input[type="radio"] {
   appearance: none;
   margin: 0;
@@ -151,6 +193,16 @@ table {
   height: 1.15em;
   border-bottom: 0.15em solid currentColor;
 }
+
+.rsvp-button {
+  width: 50%;
+  padding: 1em;
+  margin: 1em;
+  box-shadow: 5px 5px #0A2530;
+  color: #153e54;
+  background-color: #f3e4d0;
+}
+
 
 .rsvp-option {
   display: flex;

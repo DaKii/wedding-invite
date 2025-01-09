@@ -9,27 +9,27 @@
   <body>
     <div id='main-content'>
       <div id='invite-list-container'>
-        <h1 class='invite-list-name'>Guest List</h1>
+        <h1 class='invite-list-name'>GUEST LIST</h1>
         <div class ='invite-list'>
           <div class='create-invite-button'>
             <div class='create-invite-button-text' hx-get="/invite/new" hx-trigger="click" hx-target=".create-invite-button" hx-swap="outerHTML">
-              Create new invite
+              CREATE NEW INVITE
             </div>
           </div>
           <br>
           <table class='invite-list-table'>
             <thead class='invite-list-header'>
               <tr>
-                <th>NAME</th>
-                <th>RSVP</th>
-                <th>EXTRA INVITES</th>
+                <th class='thead-name'>NAME</th>
+                <th class='thead-other'>RSVP</th>
+                <th class='thead-other'>EXTRA INVITES</th>
               </tr>
             </thead>
             <tbody class='invite-list-items'>
               <% attendees.each do |attendee| %>
                 <tr id="invite-<%= attendee[:id] %>" class='invite-item'>
-                  <td>
-                    <a href="/invite/<%= attendee[:id]%>" class='invite-item-name invite-item-content'><%= attendee[:name] %> <%= attendee[:last_name] %></a>
+                  <td class='invite-item-name invite-item-content'>
+                    <a href="/invite/<%= attendee[:id]%>" ><%= attendee[:name] %> <%= attendee[:last_name] %></a>
                   </td>
                   <td class='rsvp invite-item-content'>
                     <% if attendee[:rsvp].nil? %>

@@ -1,0 +1,14 @@
+<%= id %>
+<%= form_for :attendee, "/invite/", method: :post do |f| %>
+  <div class='rsvp-option'>
+    <%= f.label 'Yes', for: 'rsvp-yes' %>
+    <%= f.radio_button :rsvp_options, true, id: 'attendee-rsvp-yes' %>
+  </div>
+  <div class='rsvp-option'>
+    <%= f.label 'No', for: 'rsvp-no' %>
+    <%= f.radio_button :rsvp_options, false, id: 'attendee-rsvp-no'%>
+  </div>
+  <%= f.label 'Plus One', for: :plus_count %>
+  <%= f.text_field :plus_count%>
+  <%= f.submit 'Submit' %>
+<% end %>

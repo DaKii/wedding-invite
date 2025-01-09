@@ -21,7 +21,7 @@ module WeddingInvite
 
             update_relation_by_id(rom.relations[:attendees], params[:id], params[:attendee])
 
-            handle_flash_message(response, :notice, 'Invite Created')
+            handle_flash_message(response, :notice, 'INVITE CREATED')
             response.redirect_to "/invite/#{params[:id]}"
           else
             handle_flash_message(response, :notice, { errors: params.errors }.to_json)
