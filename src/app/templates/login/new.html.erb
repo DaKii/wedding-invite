@@ -1,0 +1,17 @@
+<div class='login-register-form'>
+  <h1>Login</h1>
+  <%= form_for :user, '/sessions', method: :post do |f| %>
+    <%= f.label "USERNAME", for: :username, class: 'form-labels' %>
+    <%= f.text_field :username, class: 'form-inputs' %>
+    <div>
+      <%= f.label "PASSWORD", for: :password, class: 'form-labels' %>
+      <%= f.password_field :password, class: 'form-inputs' %>
+    </div>
+    <div>
+      <%= f.submit 'LOGIN', class: 'btn' %>
+    </div>
+  <% end %>
+  <div class='register-button base-button white' hx-get="/register" hx-trigger="click" hx-target=".login-register-form" hx-swap="outerHTML">
+    Register
+  </div>
+</div>

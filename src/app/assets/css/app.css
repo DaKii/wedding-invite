@@ -203,6 +203,12 @@ table {
   margin: 1em;
 }
 
+.base-button.white{
+  box-shadow: 5px 5px #0A2530;
+  color: #153e54;
+  background-color: #f3e4d0;
+}
+
 .rsvp-button {
   width: 50%;
   padding: 1em;

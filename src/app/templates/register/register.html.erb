@@ -1,0 +1,18 @@
+<h1>Register</h1>
+<%= form_for :registrations, '/registrations', method: :post do |f|%>
+  <div>
+    <%= f.label :username, 'Username' %>
+    <%= f.text_field :username %>
+  </div>
+  <div>
+    <%= f.label :email, 'Email' %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password, 'Password' %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit 'Register' %>
+  </div>
+<% end %>
