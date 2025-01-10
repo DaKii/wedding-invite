@@ -5,7 +5,6 @@
 
 body {
   min-height:100vh;
-  width: auto;
   background-color: #153e54;
   color: #000;
   font-family: "Poppins", sans-serif;
@@ -157,12 +156,15 @@ table {
   justify-content: center;
   text-align: center;
   position: relative;
-  perspective: 600px;
+  perspective: 1500px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 800px;
 }
 
 .flip-card-inner {
-  height: 800px;
-  width: 1200px;
+  height: 100%;
+  width: 100%;
 
   transition: transform 0.8s;
   transform-style: preserve-3d;
