@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class='flip-card-desc'>
-    <% if attendee_info[:rsvp] %>
+    <% if !attendee_info[:rsvp].nil? %>
       You have already RSVP'ed
     <% else %>
       <div class='rsvp-button' hx-get="/invite/<%=id%>/rsvp" hx-trigger="click" hx-target=".rsvp-button" hx-swap="outerHTML">

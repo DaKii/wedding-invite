@@ -1,5 +1,5 @@
 <div class='rsvp-container'>
-  <%= form_for :attendee, "/invite/", method: :post, class:'rsvp-form' do |f| %>
+  <%= form_for :attendee, "/invite/#{attendee_info[:id]}", method: :post, class:'rsvp-form' do |f| %>
     <div class='rsvp-option'>
       <%= f.label 'Yes', for: 'rsvp-yes', class: 'form-labels white' %>
       <%= f.radio_button :rsvp_options, true, id: 'attendee-rsvp-yes', class: 'form-inputs white' %>
@@ -10,7 +10,7 @@
     </div>
     <div>
       <%= f.label 'Confirm plus one', for: :plus_count, class: 'form-labels white' %>
-      <%= f.select :plus_count, total_plus_count ,class: 'form-inputs white'%>
+      <%= f.select :confirmed_plus_count, total_plus_count ,class: 'form-inputs white'%>
       <%= f.submit 'Submit' %>
     </div>
   <% end %>

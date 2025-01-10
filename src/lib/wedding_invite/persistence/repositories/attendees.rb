@@ -12,6 +12,10 @@ module WeddingInvite
         def all
           attendees.to_a
         end
+
+        def get_by_id(id)
+          attendees.by_pk(id).one
+        end
       end
     end
   end

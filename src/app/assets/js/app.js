@@ -5,6 +5,10 @@ const cards = document.querySelectorAll(".flip-card-inner");
 const flipCardDesc = document.getElementsByClassName("flip-card-desc");
 
 [...cards].forEach((card) => {
+  addFlipListener(card);
+});
+
+function addFlipListener(card) {
   card.addEventListener("click", function () {
     card.style.transform += " rotateY(180deg) ";
     card.classList.toggle("is-flipped");
@@ -19,4 +23,4 @@ const flipCardDesc = document.getElementsByClassName("flip-card-desc");
       console.log(flipCardDesc.hidden);
     }
   });
-});
+}

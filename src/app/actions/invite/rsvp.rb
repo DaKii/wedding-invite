@@ -16,7 +16,7 @@ module WeddingInvite
 
           total_plus_count = (0..attendee_info[:plus_count]).to_a
 
-          response.render(view, id: id, total_plus_count: total_plus_count)
+          response.render(view, id: id, total_plus_count: total_plus_count, attendee_info: attendee_info)
         end
       end
     end
