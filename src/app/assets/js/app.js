@@ -1,11 +1,12 @@
 import "../css/app.css";
 import "./htmx.min.js";
 
-const cards = document.querySelectorAll(".flip-card-inner");
+const cards = document.querySelectorAll(".flip-card-inner.not-clicked");
 const flipCardDesc = document.getElementsByClassName("flip-card-desc");
 
 [...cards].forEach((card) => {
   addFlipListener(card);
+  card.classList.toggle("not-clicked");
 });
 
 function addFlipListener(card) {
